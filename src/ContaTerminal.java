@@ -5,7 +5,9 @@ public class ContaTerminal {
 
     public static void main(String[] args) throws Exception {
 
-        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+        Locale.setDefault(Locale.US);
+        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Bem vindo ao banco");
         System.out.println("------------------");
         System.out.println("Digite 1 para criar uma conta");
@@ -18,15 +20,15 @@ public class ContaTerminal {
         MenuConta menuConta = new MenuConta();
 
         if (opcao == 1) {
-            menuConta.CriarConta();
+            menuConta.criarConta();
         } else if (opcao == 2) {
-            menuConta.Sacar(opcao);
+            menuConta.sacar(opcao);
         } else if (opcao == 3) {
-            menuConta.Depositar(opcao);
+            menuConta.depositar(opcao);
         } else if (opcao == 4) {
-            menuConta.Transferir(opcao);
+            menuConta.transferir(opcao);
         } else if (opcao == 5) {
-            System.out.println("Obrigado por utilizar nossos serviços");
+            menuConta.sair();
         } else {
             System.out.println("Opção inválida");
         }
